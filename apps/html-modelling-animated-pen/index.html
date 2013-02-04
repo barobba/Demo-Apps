@@ -1,0 +1,92 @@
+﻿<?php $marker_html = file_get_contents('../../data/markers/marker-template.html') ?>
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" type="text/css" href="clearfix.css" />
+<link rel="stylesheet" type="text/css" href="doc.css" />
+<link rel="stylesheet" type="text/css" href="demo.css" />
+
+<script type="text/javascript" src="../../libraries/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../libraries/jquery-ui-1.10.0.custom/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+<script type="text/javascript" src="../../libraries/jquery-ui-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="../../libraries/mustache.js/mustache.js"></script>
+<script type="text/javascript" src="../../libraries/wireframe.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../mustache-menus/menus.css" />
+<script type="text/javascript" src="../mustache-menus/menus.js"></script>
+
+<link rel="stylesheet" type="text/css" href="felt-marker.css" />
+<link rel="stylesheet" type="text/css" href="felt-marker-animation.css" />
+<script type="text/javascript" src="felt-marker-animation.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  loadMenu('#page-menu', 'pageMenu', '../mustache-menus/');
+  
+  $.get('../../data/felt-tip-markers/felt-tip-marker.tpl.html')
+  .success(function(feltTipMarker, status, request){
+    $('#1.demo .wireframe').prepend(feltTipMarker);
+    $('#2.demo').prepend(feltTipMarker);
+    $('#felt-marker-animation.demo').prepend(feltTipMarker);
+    wireframe('.wireframe');
+  });
+
+});
+</script>
+  
+<div id="page-wrapper"><div id="page">
+
+  <div id="page-menu"></div>
+
+  <h1>Modeling a Felt Marker Using HTML</h1>
+  
+  <p>This page demonstrates HTML modeling.</p>
+  
+  <p>HTML modeling (similar to XML modeling) is a way to describe real-world concepts visually.
+     In this case, the focus is on the presentation.
+     Better HTML models will help the CSS to better stylize a page, and better HTML models will help the JavaScript to interact with users.</p>
+  
+  <p>You start with the HTML to describe things in a structured manner.
+  
+  A marker has these elements:
+    <span class="highlight">cap</span>, 
+    <span class="highlight">handle</span>, 
+    <span class="highlight">label</span>, 
+    <span class="highlight">ink well</span>, and 
+    <span class="highlight">felt</span>,
+  where the felt goes inside the well, and the well fits inside the handle.</p>
+
+  <p>CSS and JavaScript will then interact with the model by stylizing or altering the HTML.</p>
+
+  <div class="demo-wrapper">
+    <div class="demo clearfix" id="felt-marker-animation">
+      <div id="applied-color"></div>
+    </div>
+    <div class="demo-toolbar">
+      <a href="#" class="option-animate">Animate</a>
+    </div>
+  </div><!-- //demo-wrapper -->
+  
+  <p>The wireframe might look like this.</p>
+  <div class="demo-wrapper"><div class="demo clearfix" id="1">
+    <div class="wireframe"></div>
+  </div></div><!-- //demo //demo-wrapper -->
+
+  <p>Then, CSS can be used to help visually enhance the information.
+    Improving the HTML model will help the CSS to effectively enhance the information.
+  </p>
+  <div class="demo-wrapper"><div class="demo clearfix" id="2"></div></div>
+  
+  <h2>Conclusions:</h2>
+  <p>
+    All page content can benefit from the power of HTML
+    by carefully considering the layering of HTML elements.
+    <strong>HTML modeling is important for all page elements that are presented to the visitor.</strong>
+  </p>
+  <p>
+    HTML modeling is an important step in quality Web development and Web app development.
+    Many problems can be avoided or fixed by starting from the HTML model, and considering how to improve the HTML model.
+  </p>
+
+</div></div><!-- //page //page-wrapper -->

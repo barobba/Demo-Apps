@@ -1,0 +1,30 @@
+﻿.wireframe div {
+  position: static !important;
+  top: 0px !important;
+  left: 0px !important;
+  margin: 1em !important;
+  border: 1px solid black !important;
+  padding: 1em !important;
+  width: auto !important;
+  height: auto !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: white !important;
+}
+
+.demo-wrapper {
+  background-color: brown;
+  padding: 1em;
+  border-radius: .5em;
+  border: 1px solid black;
+}
+
+.demo {
+  position: relative;
+}
+
+.demo-toolbar {
+  margin-top: 1em;
+}

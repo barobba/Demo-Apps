@@ -1,0 +1,51 @@
+﻿
+
+<script type="text/javascript" src="../../libraries/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../libraries/jquery-ui-1.10.0.custom/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+<script type="text/javascript" src="../../libraries/jquery-ui-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="../../libraries/mustache.js/mustache.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../mustache-menus/menus.css" />
+<script type="text/javascript" src="../mustache-menus/menus.js"></script>
+
+<link rel="stylesheet" type="text/css" href="wikipedia-search.css" />
+<script type="text/javascript" src="wikipedia-search.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  loadMenu('#page-menu', 'pageMenu', '../mustache-menus/');
+  
+  $('#search-terms').focus()
+  $('#search-button').click();
+  
+});
+</script>
+
+<div id="page-menu"></div>
+
+<h1>Search Wikipedia</h1>
+
+<p>This page demonstrates Mustache.js and jQuery.</p>
+
+<form>
+<input id="search-terms" value="Omaha" /> <input id="search-button" type="submit" />
+</form>
+
+<div id="results">
+  <h2>Results</h2>
+  <div class="result-container"></div>
+  <script type="application/x-template" id="result-template">
+    {{#results}}
+    <div class="result" title="{{.}}">
+      <a href="http://wikipedia.org/wiki/{{.}}">{{.}}</a>
+    </div>
+    {{/results}}
+  </script>
+  <script type="application/x-template" id="result-template-full">
+    {{#thumbnail}}<div class="thumb" style="background:url({{source}}) center center no-repeat"></div>{{/thumbnail}}
+    {{^thumbnail}}<div class="thumb" style="background:url(http://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/100px-Wikipedia-logo-v2.svg.png) center center no-repeat"></div>{{/thumbnail}}
+    <div class="title"><a href="http://wikipedia.org/wiki/{{title}}">{{title}}</a></div>
+    <div class="abstract">{{extract}}</div>
+  </script>
+</div>

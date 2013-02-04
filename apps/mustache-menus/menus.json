@@ -1,0 +1,22 @@
+﻿{
+    "menus": {
+        "pageMenu": {
+            "label": "Demonstration apps",
+            "items": [
+                {
+                    "title": "Search Wikipedia",
+                    "url": "../mustache-wikipedia-search/"
+                },
+                {
+                    "title": "Modelling a Felt Marker",
+                    "url": "../html-modelling-animated-pen/"
+                },
+                {
+                    "title": "JavaScript Navigation",
+                    "url": "../mustache-menus/"
+                }
+            ],
+            "template": "page-menu.tpl.html"
+        }
+    }
+}

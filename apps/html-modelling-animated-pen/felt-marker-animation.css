@@ -1,0 +1,25 @@
+﻿
+#felt-marker-animation {
+  position: relative;
+  height: 260px;
+}
+
+#felt-marker-animation #applied-color {
+  position: absolute;
+  background-color: rgb(243,75,0);
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  top: 260px;
+  left: 534px;
+  visibility: hidden;
+}
+
+#felt-marker-animation .marker-cap {
+  position: absolute;
+}
+
+#felt-marker-animation .marker {
+  position: absolute;
+  top: 60px;
+}

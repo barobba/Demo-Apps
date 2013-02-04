@@ -1,0 +1,63 @@
+﻿<script type="text/javascript" src="../../libraries/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../../libraries/mustache.js/mustache.js"></script>
+<script type="text/javascript" src="../../libraries/emphasize.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../mustache-menus/menus.css" />
+<script type="text/javascript" src="../mustache-menus/menus.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  loadMenu('#page-menu', 'pageMenu', '../mustache-menus/');
+
+});
+</script>
+  
+<div id="page-menu"></div>
+
+<h1>JavaScript Navigation</h1>
+
+<p>The menu at the top of this page is created using Mustache.js and jQuery.</p>
+<p>The template is saved as an HTML file, and the data is saved as a JSON file.</p>
+
+<h2>Usage</h2>
+<pre>loadMenu(element, menuName, menuFilepath);</pre>
+
+<h2>Template</h2>
+<pre><div id="demo-template"></div></pre>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $.get('page-menu.tpl.html')
+  .success(function(response, status, request){
+    var encodedHtml = $('<div/>').text(response).html();
+    $('#demo-template').html(encodedHtml);
+  });
+  
+});
+</script>
+
+<h2>Data</h2>
+<pre><div id="demo-template-data"></div></pre>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $.getJSON('menus.json')
+  .success(function(menuData, status, request){
+    var menuString = JSON.stringify(menuData, undefined, 2);
+    menuString = emphasize(menuString, '"pageMenu"');
+    menuString = emphasize(menuString, '"template"');
+    menuString = emphasize(menuString, '"items"');
+    $('#demo-template-data').html(menuString);
+  });
+  
+});
+</script>
+
+<h2>Notes</h2>
+<p>Some notes about this implementation:</p>
+<ul>
+<li>The menu data could contain more than one menu.</li>
+<li>The menu data also provides a default template file, which could be used for picking the template to use. This means the menu data would have to be loaded before chosing the template.</li>
+<li>The menu data filename is hardcoded, and it is assumed that the templates and menu data are stored in the same filepath.</li>
+</ul>

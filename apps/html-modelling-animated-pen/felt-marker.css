@@ -1,0 +1,77 @@
+﻿.marker-cap {
+  position: relative;
+  width: 30px;
+  height: 60px;
+  background-color: rgb(255, 127, 0);
+  -webkit-box-shadow: -15px 0px 10px -5px rgb(255,185,97) inset;
+  -moz-box-shadow: -15px 0px 10px -5px rgb(255,185,97) inset;
+  box-shadow: -15px 0px 10px -5px rgb(255,185,97) inset;
+  z-index: 2;
+}
+
+.marker-cap-shadow {
+  width: 30px;
+  height: 60px;
+  -webkit-box-shadow: 20px 0px 20px -10px rgb(127,64,0) inset;
+  -moz-box-shadow: 20px 0px 20px -10px rgb(127,64,0) inset;
+  box-shadow: 20px 0px 20px -10px rgb(127,64,0) inset;
+}
+
+.marker {
+  position: relative;
+  width: 30px;
+  height: 237px;
+  margin-top: -37px;
+  z-index: 1;
+}
+
+.marker-handle {
+  position: relative;
+  top: 37px;
+  width: 30px;
+  height: 200px;
+  -webkit-box-shadow: 20px 0px 20px -10px #444 inset;
+  -moz-box-shadow: 20px 0px 20px -10px #444 inset;
+  box-shadow: 20px 0px 20px -10px #444 inset;
+  background-color: white;
+}
+
+.marker-label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 24px;
+  height: 180px;
+  background-image: url(marker-label.png);
+  background-repeat: no-repeat;
+  background-position: 14px 7px;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  border-left: 1px solid #888;
+}
+
+.marker-label-lettering {
+  display: none;
+}
+
+.marker-felt {
+  position: absolute;
+  top: -37px;
+}
+
+.marker-felt .marker-felt-tip {
+  position: absolute;
+  left: 5px;
+  width: 24px;
+  height: 37px;
+  background-image: url(marker-felt-tip.png);
+  background-repeat: no-repeat;
+}
+
+.marker-felt .marker-ink-well {
+  position: absolute;
+  left: 5px;
+  top: 20px;
+  width: 10px;
+  height: 160px;
+}
