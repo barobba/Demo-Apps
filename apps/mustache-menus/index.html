@@ -1,4 +1,8 @@
-﻿<script type="text/javascript" src="../../libraries/jquery-1.9.0.min.js"></script>
+﻿<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="index.css" />
+
+<script type="text/javascript" src="../../libraries/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="../../libraries/mustache.js/mustache.js"></script>
 <script type="text/javascript" src="../../libraries/emphasize.js"></script>
 
@@ -15,7 +19,7 @@ $(document).ready(function(){
   
 <div id="page-menu"></div>
 
-<h1>JavaScript Navigation</h1>
+<h1>Site Navigation</h1>
 
 <p>The menu at the top of this page is created using Mustache.js and jQuery.</p>
 <p>The template is saved as an HTML file, and the data is saved as a JSON file.</p>
@@ -23,22 +27,8 @@ $(document).ready(function(){
 <h2>Usage</h2>
 <pre>loadMenu(element, menuName, menuFilepath);</pre>
 
-<h2>Template</h2>
-<pre><div id="demo-template"></div></pre>
-<script type="text/javascript">
-$(document).ready(function(){
-
-  $.get('page-menu.tpl.html')
-  .success(function(response, status, request){
-    var encodedHtml = $('<div/>').text(response).html();
-    $('#demo-template').html(encodedHtml);
-  });
-  
-});
-</script>
-
 <h2>Data</h2>
-<pre><div id="demo-template-data"></div></pre>
+<div id="demo-template-data"></div>
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -49,6 +39,20 @@ $(document).ready(function(){
     menuString = emphasize(menuString, '"template"');
     menuString = emphasize(menuString, '"items"');
     $('#demo-template-data').html(menuString);
+  });
+  
+});
+</script>
+
+<h2>Template</h2>
+<div id="demo-template"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $.get('page-menu.tpl.html')
+  .success(function(response, status, request){
+    var encodedHtml = $('<div/>').text(response).html();
+    $('#demo-template').html(encodedHtml);
   });
   
 });

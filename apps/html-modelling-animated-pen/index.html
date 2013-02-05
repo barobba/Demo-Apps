@@ -1,5 +1,4 @@
-﻿<?php $marker_html = file_get_contents('../../data/markers/marker-template.html') ?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 
 <link rel="stylesheet" type="text/css" href="clearfix.css" />
@@ -39,25 +38,9 @@ $(document).ready(function(){
 
   <div id="page-menu"></div>
 
-  <h1>Modeling a Felt Marker Using HTML</h1>
+  <h1>Felt Marker</h1>
   
   <p>This page demonstrates HTML modeling.</p>
-  
-  <p>HTML modeling (similar to XML modeling) is a way to describe real-world concepts visually.
-     In this case, the focus is on the presentation.
-     Better HTML models will help the CSS to better stylize a page, and better HTML models will help the JavaScript to interact with users.</p>
-  
-  <p>You start with the HTML to describe things in a structured manner.
-  
-  A marker has these elements:
-    <span class="highlight">cap</span>, 
-    <span class="highlight">handle</span>, 
-    <span class="highlight">label</span>, 
-    <span class="highlight">ink well</span>, and 
-    <span class="highlight">felt</span>,
-  where the felt goes inside the well, and the well fits inside the handle.</p>
-
-  <p>CSS and JavaScript will then interact with the model by stylizing or altering the HTML.</p>
 
   <div class="demo-wrapper">
     <div class="demo clearfix" id="felt-marker-animation">
@@ -68,25 +51,39 @@ $(document).ready(function(){
     </div>
   </div><!-- //demo-wrapper -->
   
-  <p>The wireframe might look like this.</p>
+  <p>HTML modeling is a way to describe real-world concepts visually.
+     HTML modeling is different from XML modeling because the focus is on modeling for presentation purposes.
+     <strong>HTML modeling is important for all page elements that are presented to the visitor.</strong>
+  </p>
+  
+  <p>
+    Many problems can be avoided or fixed by fixing the HTML model and by considering how to improve the HTML model.
+    Better HTML models will improve the ability to use CSS to better stylize a page,
+    and better HTML models will help improve the ability to use JavaScript to interact with users.
+  </p>
+  
+  <p>
+    A marker has these elements:
+      <span class="highlight">cap</span>, 
+      <span class="highlight">handle</span>, 
+      <span class="highlight">label</span>, 
+      <span class="highlight">ink well</span>, and 
+      <span class="highlight">felt</span>,
+    but for presentation purposes we might also need to add a <span class="highlight">cap shadow</span> element and a <span class="highlight">label</span> element.
+    The shadow still fits in with the model of a maker, but it demonstrations how the focus is on modeling for presentation purposes.
+    The wireframe might look like this:</p>
   <div class="demo-wrapper"><div class="demo clearfix" id="1">
     <div class="wireframe"></div>
   </div></div><!-- //demo //demo-wrapper -->
 
-  <p>Then, CSS can be used to help visually enhance the information.
-    Improving the HTML model will help the CSS to effectively enhance the information.
-  </p>
+  <p>Then CSS is used to finish the visual design:</p>
+  
   <div class="demo-wrapper"><div class="demo clearfix" id="2"></div></div>
   
-  <h2>Conclusions:</h2>
+  <h2>Conclusions</h2>
   <p>
-    All page content can benefit from the power of HTML
-    by carefully considering the layering of HTML elements.
-    <strong>HTML modeling is important for all page elements that are presented to the visitor.</strong>
-  </p>
-  <p>
-    HTML modeling is an important step in quality Web development and Web app development.
-    Many problems can be avoided or fixed by starting from the HTML model, and considering how to improve the HTML model.
+    HTML modeling is an important step in quality Web application development.
+    All page content can benefit from the power of HTML by carefully considering how to arrange the HTML in a way that best models the page elements for presentation purposes.
   </p>
 
 </div></div><!-- //page //page-wrapper -->
