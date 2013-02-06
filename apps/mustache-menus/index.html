@@ -21,11 +21,29 @@ $(document).ready(function(){
 
 <h1>Site Navigation</h1>
 
+<p>This page demonstrates Mustache.js and jQuery.</p>
+<p>The scripting occurs entirely in the browser using HTML, JavaScript and CSS.</p>
+
+<h2>Mustache.js Templates</h2>
 <p>The menu at the top of this page is created using Mustache.js and jQuery.</p>
-<p>The template is saved as an HTML file, and the data is saved as a JSON file.</p>
+<p>The template is saved as a separate HTML file, and the data is saved as a separate JSON file.</p>
 
 <h2>Usage</h2>
 <pre>loadMenu(element, menuName, menuFilepath);</pre>
+
+<h2>Template</h2>
+<div id="demo-template"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $.get('page-menu.tpl.html')
+  .success(function(response, status, request){
+    var encodedHtml = $('<div/>').text(response).html();
+    $('#demo-template').html(encodedHtml);
+  });
+  
+});
+</script>
 
 <h2>Data</h2>
 <div id="demo-template-data"></div>
@@ -44,24 +62,10 @@ $(document).ready(function(){
 });
 </script>
 
-<h2>Template</h2>
-<div id="demo-template"></div>
-<script type="text/javascript">
-$(document).ready(function(){
-
-  $.get('page-menu.tpl.html')
-  .success(function(response, status, request){
-    var encodedHtml = $('<div/>').text(response).html();
-    $('#demo-template').html(encodedHtml);
-  });
-  
-});
-</script>
-
 <h2>Notes</h2>
 <p>Some notes about this implementation:</p>
 <ul>
-<li>The menu data could contain more than one menu.</li>
-<li>The menu data also provides a default template file, which could be used for picking the template to use. This means the menu data would have to be loaded before chosing the template.</li>
-<li>The menu data filename is hardcoded, and it is assumed that the templates and menu data are stored in the same filepath.</li>
+<li>The data could contain more than one menu, if needed.</li>
+<li>The data also provides a default template filename, which could be useful for automatically choosing the template.</li>
+<li>This implementation assumes that the templates and data are stored in the same filepath.</li>
 </ul>

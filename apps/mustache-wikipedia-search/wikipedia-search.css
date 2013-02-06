@@ -2,6 +2,7 @@
 #results {
   visibility: hidden;
   font-family: sans-serif;
+  padding-bottom: 1em;
 }
 
 .result {
